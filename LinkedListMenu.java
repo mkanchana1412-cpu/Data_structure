@@ -13,7 +13,6 @@ class Node {
 public class LinkedListMenu {
     private Node head;
 
-    // 1) Creation (insert at end repeatedly)
     public void create(int n, Scanner sc) {
         head = null; // reset list
         for (int i = 0; i < n; i++) {
@@ -21,14 +20,12 @@ public class LinkedListMenu {
         }
     }
 
-    // 2) Insert at Beginning
     public void insertBegin(int data) {
         Node newNode = new Node(data);
         newNode.next = head;
         head = newNode;
     }
 
-    // 3) Insert at End
     public void insertEnd(int data) {
         Node newNode = new Node(data);
         if (head == null) {
@@ -40,7 +37,6 @@ public class LinkedListMenu {
         temp.next = newNode;
     }
 
-    // 4) Insert at Position (0-based index)
     public void insertPosition(int index, int data) {
         if (index < 0) {
             System.out.println("Invalid index");
@@ -63,7 +59,6 @@ public class LinkedListMenu {
         temp.next = newNode;
     }
 
-    // 5) Delete at Beginning
     public void deleteBegin() {
         if (head == null) {
             System.out.println("List is empty");
@@ -72,7 +67,6 @@ public class LinkedListMenu {
         head = head.next;
     }
 
-    // 6) Delete at End
     public void deleteEnd() {
         if (head == null) {
             System.out.println("List is empty");
@@ -87,7 +81,6 @@ public class LinkedListMenu {
         temp.next = null;
     }
 
-    // 7) Delete at Position (0-based index)
     public void deletePosition(int index) {
         if (index < 0 || head == null) {
             System.out.println("Invalid index / List empty");
@@ -108,7 +101,6 @@ public class LinkedListMenu {
         temp.next = temp.next.next;
     }
 
-    // 8) Search (returns index, -1 if not found)
     public int search(int key) {
         Node temp = head;
         int index = 0;
@@ -120,7 +112,6 @@ public class LinkedListMenu {
         return -1;
     }
 
-    // 9) Update by Index (0-based)
     public void updateByIndex(int index, int newValue) {
         if (index < 0) {
             System.out.println("Invalid index");
@@ -137,7 +128,6 @@ public class LinkedListMenu {
         temp.data = newValue;
     }
 
-    // 10) Update by Value (first occurrence)
     public void updateByValue(int oldValue, int newValue) {
         Node temp = head;
         while (temp != null) {
@@ -150,7 +140,6 @@ public class LinkedListMenu {
         System.out.println("Value not found");
     }
 
-    // 11) Display
     public void display() {
         if (head == null) {
             System.out.println("List is empty");
@@ -164,7 +153,7 @@ public class LinkedListMenu {
         System.out.println("null");
     }
 
-    // 12) Delete by Value (first occurrence)
+  
     public void deleteByValue(int key) {
         if (head == null) {
             System.out.println("List is empty");
@@ -185,12 +174,11 @@ public class LinkedListMenu {
         temp.next = temp.next.next;
     }
 
-    // 13) Delete by Index (same as deletePosition)
     public void deleteByIndex(int index) {
         deletePosition(index);
     }
 
-    // Menu
+ 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         LinkedListMenu list = new LinkedListMenu();
